@@ -42,7 +42,7 @@ function Search() {
         
         <Row>
             <Col size="md-6 sm-12">
-                <Card>
+                <Card className="cards">
                     <header id="searchHeader">
                         <i class="fas fa-book"></i>Book Search
                     </header>
@@ -57,14 +57,15 @@ function Search() {
                                 disabled={!(formObject.title)}
                                 onClick={() => {}}
                             >
-                                Submit Book
+                                Search
                             </FormBtn>
                         {/* </form> */}
                     </CardContent>
                 </Card>
             </Col>
+
             <Col size="md-6 sm-12">
-                <Card>
+                <Card className="columns">
                     <header id="resultsHeader">
                         Results
                     </header>
