@@ -32,12 +32,16 @@ function Search() {
     return (
       <Container fluid>
         <Row>
-            <Col size="md-6">
+            <Col size="sm-12">
                 <Jumbotron>
                     <h1>Google Books Search</h1>
                     <h4>Search for and Save Books of Interest</h4>
                 </Jumbotron>
-
+            </Col>
+        </Row>
+        
+        <Row>
+            <Col size="md-6 sm-12">
                 <Card>
                     <header id="searchHeader">
                         <i class="fas fa-book"></i>Book Search
@@ -58,30 +62,33 @@ function Search() {
                         {/* </form> */}
                     </CardContent>
                 </Card>
-          </Col>
-          <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>Books On My List</h1>
-            </Jumbotron>
-            {books.length ? (
-              <List>
-                {books.map(book => {
-                  return (
-                    <ListItem key={book._id}>
-                      <a href={"/books/" + book._id}>
-                        <strong>
-                          {book.title} by {book.author}
-                        </strong>
-                      </a>
-                      <DeleteBtn onClick={() =>{}} />
-                    </ListItem>
-                  );
-                })}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-          </Col>
+            </Col>
+            <Col size="md-6 sm-12">
+                <Card>
+                    <header id="resultsHeader">
+                        Results
+                    </header>
+                    <h1>Search For a Book To Begin!</h1>
+                    {books.length ? (
+                    <List>
+                        {books.map(book => {
+                        return (
+                            <ListItem key={book._id}>
+                            <a href={"/books/" + book._id}>
+                                <strong>
+                                {book.title} by {book.author}
+                                </strong>
+                            </a>
+                            <DeleteBtn onClick={() =>{}} />
+                            </ListItem>
+                        );
+                        })}
+                    </List>
+                    ) : (
+                    <h3>No Results to Display</h3>
+                    )}
+                </Card>
+            </Col>
         </Row>
       </Container>
     );
