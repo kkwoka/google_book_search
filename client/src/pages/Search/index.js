@@ -87,8 +87,8 @@ function Search() {
                     <List>
                         {books.map(book => {
                         return (
-                            <ListItem key={book.accessInfo.id}>
-                            <a href={"/books/" + book.accessInfo.id}>
+                            <ListItem key={book.id}>
+                            <a href={"/books/" + book.id}>
                                 <strong>
                                 {book.volumeInfo.title} by {book.volumeInfo.authors}
                                 </strong>
